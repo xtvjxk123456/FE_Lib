@@ -1,0 +1,83 @@
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTextColor" : "{\n  \"r\" : 20,\n  \"g\" : 20,\n  \"b\" : 20\n  }",
+    "uiNodeColor" : "{\n  \"r\" : 121,\n  \"g\" : 134,\n  \"b\" : 143\n  }",
+    "uiTooltip" : "two scalar array to vec2 array"
+    },
+  "title" : "ZipToVec3Array",
+  "ports" : [
+    {
+      "objectType" : "ExecPort",
+      "name" : "exec",
+      "nodePortType" : "IO",
+      "defaultValues" : {
+        "Execute" : {}
+        },
+      "execPortType" : "IO",
+      "typeSpec" : "Execute"
+      },
+    {
+      "objectType" : "ExecPort",
+      "name" : "arrayA",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "Scalar[]" : []
+        },
+      "execPortType" : "In",
+      "typeSpec" : "Scalar[]"
+      },
+    {
+      "objectType" : "ExecPort",
+      "name" : "arrayB",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "Scalar[]" : []
+        },
+      "execPortType" : "In",
+      "typeSpec" : "Scalar[]"
+      },
+    {
+      "objectType" : "ExecPort",
+      "name" : "arrayC",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "Scalar[]" : []
+        },
+      "execPortType" : "In",
+      "typeSpec" : "Scalar[]"
+      },
+    {
+      "objectType" : "ExecPort",
+      "name" : "output",
+      "nodePortType" : "In",
+      "defaultValues" : {
+        "Vec2[]" : [],
+        "Vec3[]" : []
+        },
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3[]"
+      }
+    ],
+  "extDeps" : {},
+  "presetGUID" : "9EC430795A950B41B25DAE67532C52C2",
+  "code" : "operator merge<<<index>>>(in Scalar a[], in Scalar b[], in Scalar c[] ,out Vec3 out[]){
+  
+  
+  out.resize(a.size());
+  out[index] = Vec3(a[index],b[index],c[index]);
+
+} 
+
+
+dfgEntry {
+   if(arrayA.size() == arrayB.size()==arrayC.size())
+   
+   merge<<<arrayA.size()>>>(arrayA,arrayB,arrayC,output);
+   else
+   throw(\"input arrays has different length!\");
+   
+   
+}
+"
+  }

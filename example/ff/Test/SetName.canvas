@@ -1,0 +1,41 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "Supported types:\n  this: Test\n  name: String\n"
+    },
+  "title" : "SetName",
+  "ports" : [
+    {
+      "objectType" : "ExecPort",
+      "name" : "exec",
+      "nodePortType" : "IO",
+      "execPortType" : "IO",
+      "typeSpec" : "Execute"
+      },
+    {
+      "objectType" : "ExecPort",
+      "name" : "this",
+      "nodePortType" : "IO",
+      "execPortType" : "IO",
+      "typeSpec" : "Test"
+      },
+    {
+      "objectType" : "ExecPort",
+      "name" : "name",
+      "nodePortType" : "IO",
+      "execPortType" : "IO",
+      "typeSpec" : "String"
+      }
+    ],
+  "extDeps" : {
+    "Test" : "*"
+    },
+  "presetGUID" : "7F03602EA9307BEB88108493C87FE58D",
+  "code" : "require Test;
+
+dfgEntry {
+  this.setName(name);
+}
+"
+  }

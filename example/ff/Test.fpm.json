@@ -1,0 +1,9 @@
+{
+  "code": [
+    "Test.kl"
+  ]
+  "dfgPresets": {
+    "dir": "Test",
+    "presetPath": "Test"
+    }
+}

@@ -1,0 +1,41 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "Supported types:\n  this: Test\n  ff: String\n"
+    },
+  "title" : "Report",
+  "ports" : [
+    {
+      "objectType" : "ExecPort",
+      "name" : "exec",
+      "nodePortType" : "IO",
+      "execPortType" : "IO",
+      "typeSpec" : "Execute"
+      },
+    {
+      "objectType" : "ExecPort",
+      "name" : "this",
+      "nodePortType" : "Out",
+      "execPortType" : "In",
+      "typeSpec" : "Test"
+      },
+    {
+      "objectType" : "ExecPort",
+      "name" : "ff",
+      "nodePortType" : "IO",
+      "execPortType" : "IO",
+      "typeSpec" : "String"
+      }
+    ],
+  "extDeps" : {
+    "Test" : "*"
+    },
+  "presetGUID" : "B87E28C5C12A71F07EA86EC6D80B2989",
+  "code" : "require Test;
+
+dfgEntry {
+  this.report(ff);
+}
+"
+  }

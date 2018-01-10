@@ -1,0 +1,21 @@
+require Util;
+
+struct Test{
+	String name;
+};
+
+
+function Test(){
+	this.name = "test";
+}
+
+
+function Test.report(io String ff){
+	String temp = ff+this.name;
+	report(temp);
+}
+
+function Test.setName!(io String name){
+	this.name = name;
+}
+

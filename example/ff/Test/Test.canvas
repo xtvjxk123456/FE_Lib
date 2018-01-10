@@ -1,0 +1,34 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "Supported types:\n  result: Test\n"
+    },
+  "title" : "Test",
+  "ports" : [
+    {
+      "objectType" : "ExecPort",
+      "name" : "exec",
+      "nodePortType" : "IO",
+      "execPortType" : "IO",
+      "typeSpec" : "Execute"
+      },
+    {
+      "objectType" : "ExecPort",
+      "name" : "result",
+      "nodePortType" : "In",
+      "execPortType" : "Out",
+      "typeSpec" : "Test"
+      }
+    ],
+  "extDeps" : {
+    "Test" : "*"
+    },
+  "presetGUID" : "6F49729C6C6282E2CAF1C572BDE7DC3E",
+  "code" : "require Test;
+
+dfgEntry {
+  result = Test();
+}
+"
+  }

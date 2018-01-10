@@ -1,0 +1,31 @@
+[FABRIC:MT] Fabric Engine version 2.6.0 (development)
+[FABRIC:MT] Loading Canvas presets from D:\software\FabricEngine\Presets\DFG
+[FABRIC:MT] Loading Canvas presets from D:\software\FabricEngine\Tools\Kraken\Presets\DFG
+[FABRIC:MT] Loading Canvas presets from D:\pythonSource\FE_Lib\DFG
+[FABRIC:MT] Loading Canvas presets from C:\Users\zhangxuqiang\Desktop\ff
+[FABRIC:MT] Loading Canvas presets from C:\Users\zhangxuqiang\Fabric\Presets
+[FABRIC:MT] Registered extensions {Adaptors:1.0.0,Alembic:1.2.0,AlembicPatterns:1.0.0,AlembicWrapper:1.9.0,Animation:1.1.3,AnimX:1.0.0,AssetPatterns:1.1.0,AttributeHelpers:1.0.3,BinPacking:1.0.0,Bullet:1.0.4,Bullet2:1.0.0,Bullet2Wrapper:1.0.0,BulletHelpers:1.0.1,Characters:1.3.0,Containers:1.3.0,DFGWrapper:1.2.1,FabricInterfaces:1.2.0,FabricSynchronization:1.2.0,Fbx:2.0.0,FbxPatterns:1.0.0,FbxWrapper:2.0.0,FileIO:1.3.2,FreeTypeGL:2.3.1,FTL:1.1.0,Geometry:1.8.0,Images:2.1.1,InlineDrawing:1.7.0,JSON:1.1.2,Kludge,LA:1.1.0,LibLas:1.0.0,LidarPatterns:1.0.0,Manipulation:2.0.0,Math:1.6.0,FabricOBJ:1.2.0,ObjPatterns:1.0.0,OGLWrappers:1.2.0,FabricOGL:1.2.0,OpenImageIO:1.1.0,OSOGL:1.1.0,Parameters:1.1.1,RBF:2.6.0,Singletons:1.2.0,SQLite3:1.0.0,SQLite3Wrapper:1.0.0,FabricStatistics:1.1.1,Text:2.4.1,ToolExamples:1.0.0,USD:1.0.0,UsdPatterns:1.0.0,Util:1.5.0,ZeroMQ:1.0.0,HairGuides,Multipede:1.0.0,Particles:1.0.0} in directory: D:\software\FabricEngine\Exts
+[FABRIC:MT] Registered extensions {Kraken:1.2.0,KrakenAnimation,KrakenForCanvas} in directory: D:\software\FabricEngine\Tools\Kraken\Exts
+[FABRIC:MT] Registered extension {TKCM} in directory: D:\software\FabricEngine_Ext
+[FABRIC:MT] IRCache: Not pruning since last prune was less than 24 hours ago
+[FABRIC:MT] Loaded extension Math in 338.952ms (cached)
+[FABRIC:MT] Loaded extension FabricSynchronization in 84.758ms (cached)
+[FABRIC:MT] Loaded extension Singletons in 21.778ms (cached)
+[FABRIC:MT] Loaded extension Util in 49.573ms (cached)
+[FABRIC:MT] Loaded extension Test in 10.475ms (cached)
+registerFunction: thisType='Test' func='function Test?()'
+  Added to bin[normal][Test]
+registerFunction: thisType='Test' func='function Test.report?( io String ff )'
+  Added to bin[normal][Test.report]
+registerFunction: thisType='Test' func='function Test.setName!( io String name )'
+  Added to bin[normal][Test.setName]
+registerFunction: thisType='Test' func='function Test?()'
+registerFunction: thisType='Test' func='function Test.report?( io String ff )'
+registerFunction: thisType='Test' func='function Test.setName!( io String name )'
+processFunctions
+  bin[normal][Test][0] (asArray=false)
+    thisType='Test' code='function Test?()'
+  bin[normal][Test.report][1] (asArray=false)
+    thisType='Test' code='function Test.report?( io String ff )'
+  bin[normal][Test.setName][1] (asArray=false)
+    thisType='Test' code='function Test.setName!( io String name )'

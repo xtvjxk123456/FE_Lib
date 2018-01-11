@@ -1,0 +1,2211 @@
+{
+  "objectType" : "Graph",
+  "metadata" : {
+    "maya_id" : "2",
+    "uiGraphZoom" : "{\n  \"value\" : 0.5388467907905579\n  }",
+    "uiGraphPan" : "{\n  \"x\" : -582.0582917087086,\n  \"y\" : 734.5056915631685\n  }"
+    },
+  "title" : "",
+  "ports" : [
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true"
+        },
+      "name" : "exec",
+      "nodePortType" : "IO",
+      "defaultValues" : {
+        "Execute" : {}
+        },
+      "execPortType" : "IO",
+      "typeSpec" : "Execute"
+      },
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true"
+        },
+      "name" : "resultMesh",
+      "nodePortType" : "In",
+      "defaultValues" : {
+        "PolygonMesh" : null
+        },
+      "execPortType" : "Out",
+      "typeSpec" : "PolygonMesh"
+      },
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true"
+        },
+      "name" : "cloneOrigMeshID",
+      "nodePortType" : "Out",
+      "execPortType" : "In",
+      "typeSpec" : "SInt32"
+      },
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true"
+        },
+      "name" : "hight",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "Scalar" : 0
+        },
+      "execPortType" : "In",
+      "typeSpec" : "Scalar"
+      },
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true"
+        },
+      "name" : "t",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "Scalar" : 0
+        },
+      "execPortType" : "In",
+      "typeSpec" : "Scalar"
+      },
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true",
+        "uiHardRange" : "(0, 3)"
+        },
+      "name" : "smoothLv",
+      "nodePortType" : "Out",
+      "execPortType" : "In",
+      "typeSpec" : "SInt32"
+      },
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true"
+        },
+      "name" : "recomputeNormals",
+      "nodePortType" : "Out",
+      "execPortType" : "In",
+      "typeSpec" : "Boolean"
+      },
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true"
+        },
+      "name" : "targetMesh",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "PolygonMesh" : null
+        },
+      "execPortType" : "In",
+      "typeSpec" : "PolygonMesh"
+      },
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true"
+        },
+      "name" : "OrigMeshes",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "PolygonMesh[]" : []
+        },
+      "execPortType" : "In",
+      "typeSpec" : "PolygonMesh[]"
+      },
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true"
+        },
+      "name" : "exec_2",
+      "nodePortType" : "In",
+      "defaultValues" : {
+        "Execute" : {}
+        },
+      "execPortType" : "Out",
+      "typeSpec" : "Execute"
+      },
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true"
+        },
+      "name" : "debug",
+      "nodePortType" : "In",
+      "defaultValues" : {
+        "Vec3" : {
+          "x" : 0,
+          "y" : 0,
+          "z" : 0
+          }
+        },
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3"
+      }
+    ],
+  "extDeps" : {},
+  "nodes" : [
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":1303.04,\"y\":-624.372}"
+        },
+      "name" : "accuracySwich",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "name" : "exec",
+          "nodePortType" : "IO"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "accuracy",
+          "nodePortType" : "In",
+          "defaultValues" : {
+            "Integer" : 1
+            }
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "result",
+          "nodePortType" : "Out"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "upV",
+          "nodePortType" : "Out"
+          }
+        ],
+      "definition" : {
+        "objectType" : "Func",
+        "title" : "accuracySwich",
+        "ports" : [
+          {
+            "objectType" : "ExecPort",
+            "name" : "exec",
+            "nodePortType" : "IO",
+            "execPortType" : "IO",
+            "typeSpec" : "Execute"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "accuracy",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "Integer"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "result",
+            "nodePortType" : "In",
+            "execPortType" : "Out",
+            "typeSpec" : "Integer"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "upV",
+            "nodePortType" : "In",
+            "execPortType" : "Out",
+            "typeSpec" : "Vec3"
+            }
+          ],
+        "extDeps" : {},
+        "code" : "dfgEntry {
+  Integer i = 0;
+  switch(accuracy){
+    case 0: result = 0;
+            upV = Vec3(0,0,1);
+            break;
+    case 1: result = 1;
+            upV = Vec3(0,0,-1);
+            break;
+    case 2: result = 2;
+            upV = Vec3(0,0,1);
+            break;
+    case 3: result = 3;
+            upV = Vec3(0,0,-1);
+            break;
+    case 4: result = 4;
+            upV = Vec3(0,0,1);
+            break;
+    case 5: result = 5;
+            upV = Vec3(0,0,-1);
+            break;
+    case 6: result = 0;
+            upV = Vec3(0,0,1);
+            break;
+  }
+}
+"
+        }
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":2029.87,\"y\":-908.52}"
+        },
+      "name" : "getLocationWeightAndDelta",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "name" : "exec",
+          "nodePortType" : "IO"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "OrigMeshes",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "SuvQuadMeshes",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "Delta",
+          "nodePortType" : "Out"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "upV",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "hight",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "SkinIDs",
+          "nodePortType" : "Out"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "SkinWeight",
+          "nodePortType" : "Out"
+          }
+        ],
+      "definition" : {
+        "objectType" : "Func",
+        "title" : "getLocationWeightAndDelta",
+        "ports" : [
+          {
+            "objectType" : "ExecPort",
+            "name" : "exec",
+            "nodePortType" : "IO",
+            "execPortType" : "IO",
+            "typeSpec" : "Execute"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "OrigMeshes",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "PolygonMesh[]"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "SuvQuadMeshes",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "PolygonMesh[]"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "Delta",
+            "nodePortType" : "In",
+            "execPortType" : "Out",
+            "typeSpec" : "Vec3[][]"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "upV",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "Vec3"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "hight",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "Scalar"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "SkinIDs",
+            "nodePortType" : "In",
+            "execPortType" : "Out",
+            "typeSpec" : "LocalL4UInt32Array[][]"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "SkinWeight",
+            "nodePortType" : "In",
+            "execPortType" : "Out",
+            "typeSpec" : "LocalL4ScalarArray[][]"
+            }
+          ],
+        "extDeps" : {},
+        "code" : "operator CalculationWeightAndDelta<<<index>>>(
+  in Ref<SpatialQueryable> SQSuvQuadMesh
+, in PolygonMesh SuvQuadMesh
+, in PolygonMesh OrigMesh
+, io Vec3 Delta[]
+, in Vec3 upV
+, in Scalar hight
+, io LocalL4UInt32Array[] SkinIDs
+, io LocalL4ScalarArray[] SkinWeight
+){
+  Ref<SpatialQuery> query = SQSuvQuadMesh.beginSpatialQuery();
+    GeometryLocation loc = query.getClosest(OrigMesh.getPointPosition(index), Vec3(1), 100000);
+  
+    Vec3 locNor = SuvQuadMesh.getNormalAtLocation(loc);
+    Quat quat(); quat.setFromDirectionAndUpvector(locNor, upV);
+    Vec3 locPos = OrigMesh.getPointPosition(index) - SuvQuadMesh.getPositionAtLocation(loc);
+    locPos *= Vec3(1.0, hight, 1.0);
+    Delta[index] = quat.rotateVector(locPos);
+  
+    UInt32 polygonPointIndices[3];
+    Scalar weights[3];
+    SuvQuadMesh.getLocationPolygonPointIndicesAndWeights(loc, polygonPointIndices, weights ); //get PolygonPointIDs. !! not PointID !!
+  
+    SkinIDs[index].first4[0] = polygonPointIndices[0];
+    SkinIDs[index].first4[1] = polygonPointIndices[1];
+    SkinIDs[index].first4[2] = polygonPointIndices[2];
+    SkinIDs[index].first4[3] = SuvQuadMesh.getLocationPolygon(loc);  //PolygonID
+
+    SkinWeight[index].first4[0] = weights[0];
+    SkinWeight[index].first4[1] = weights[1];
+    SkinWeight[index].first4[2] = weights[2];
+    
+  SQSuvQuadMesh.endSpatialQuery(query);
+}
+
+dfgEntry {
+  Delta.resize(OrigMeshes.size());
+  SkinIDs.resize(OrigMeshes.size());
+  SkinWeight.resize(OrigMeshes.size());
+  for(Size i=0; i<OrigMeshes.size(); i++){
+    Delta[i].resize(OrigMeshes[i].pointCount());
+    GenericValueContainer options = GenericValueContainer();
+    SuvQuadMeshes[i].prepareForSpatialQueries(SuvQuadMeshes[i].pointCount(), options);
+    SkinIDs[i].resize(OrigMeshes[i].pointCount());
+    SkinWeight[i].resize(OrigMeshes[i].pointCount());
+    CalculationWeightAndDelta<<<OrigMeshes[i].pointCount()>>>(SuvQuadMeshes[i], SuvQuadMeshes[i], OrigMeshes[i], Delta[i], upV, hight, SkinIDs[i], SkinWeight[i]);
+  }
+}
+"
+        }
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":2679.91,\"y\":-648.302}"
+        },
+      "name" : "CloneToQuadPolygons",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "name" : "exec",
+          "nodePortType" : "IO"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "SkinIDs",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "SkinWeights",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "allQuad",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "Delta",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "OrigMeshes",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "SubTargetMesh",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "resultMesh",
+          "nodePortType" : "Out"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "debug",
+          "nodePortType" : "Out"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "subdivIteration",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "upV",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "cloneCount",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "recomputeNormals",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "cloneMeshID",
+          "nodePortType" : "In"
+          }
+        ],
+      "definition" : {
+        "objectType" : "Func",
+        "title" : "func",
+        "ports" : [
+          {
+            "objectType" : "ExecPort",
+            "name" : "exec",
+            "nodePortType" : "IO",
+            "execPortType" : "IO",
+            "typeSpec" : "Execute"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "SkinIDs",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "LocalL4UInt32Array[][]"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "SkinWeights",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "LocalL4ScalarArray[][]"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "allQuad",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "Boolean"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "Delta",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "Vec3[][]"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "OrigMeshes",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "PolygonMesh[]"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "SubTargetMesh",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "PolygonMesh"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "resultMesh",
+            "nodePortType" : "In",
+            "execPortType" : "Out",
+            "typeSpec" : "PolygonMesh"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "debug",
+            "nodePortType" : "In",
+            "execPortType" : "Out",
+            "typeSpec" : "Vec3"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "subdivIteration",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "Integer"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "upV",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "Vec3"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "cloneCount",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "Integer"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "recomputeNormals",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "Boolean"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "cloneMeshID",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "Integer"
+            }
+          ],
+        "extDeps" : {},
+        "code" : "operator CloneToQuadPolygons_task<<<index>>>(
+  io PolygonMeshTopology mesh
+, io Vec3[] positions
+, in PolygonMesh target
+, in LocalL4UInt32Array[][] SkinIDs
+, in LocalL4ScalarArray[][] SkinWeights
+, in Vec3[][] Delta
+, in Size[] PoiIDSlit
+, in Size[] PasteOrigMeshID
+, in Integer subdivIteration
+, in Vec3 upV
+){
+  Size PolyID;
+  Size localPoiID = index;
+  for(Size i=0; i<PoiIDSlit.size(); i++){
+    if(index < PoiIDSlit[i]){
+      PolyID = i;
+      if(PolyID != 0) 
+        localPoiID -= PoiIDSlit[i-1];
+      break;
+    }
+  }
+  Size PasteMeshID = PasteOrigMeshID[PolyID];
+  
+  Size p[4] = SkinIDs[PasteMeshID][localPoiID].first4;
+  Scalar w[4] = SkinWeights[PasteMeshID][localPoiID].first4;
+  Size polyID = (PolyID * pow(4.0, subdivIteration)) + p[3];
+
+  Vec3 poiNor0 = target.getPolygonPointNormal(polyID, p[0]) * w[0];
+  Vec3 poiNor1 = target.getPolygonPointNormal(polyID, p[1]) * w[1];
+  Vec3 poiNor2 = target.getPolygonPointNormal(polyID, p[2]) * w[2];
+  Quat quat(); quat.setFromDirectionAndUpvector( (poiNor0+poiNor1+poiNor2).unit(), upV);
+  
+  Vec3 res = quat.rotateVector(Delta[PasteMeshID][localPoiID]);
+  Vec3 poiPos0 = target.getPointPosition(target.getPolygonPoint(polyID, p[0])) *w[0];
+  Vec3 poiPos1 = target.getPointPosition(target.getPolygonPoint(polyID, p[1])) *w[1];
+  Vec3 poiPos2 = target.getPointPosition(target.getPolygonPoint(polyID, p[2])) *w[2];
+  Vec3 pos = res + poiPos0 + poiPos1 + poiPos2;
+
+  mesh.setPointAttribute(index, positions, pos );
+
+}
+
+dfgEntry {
+  if(allQuad){ 
+    Size PoiIDSlit[];  PoiIDSlit.resize(cloneCount);
+    Size PasteOrigMeshID[];  PasteOrigMeshID.resize(cloneCount);
+    resultMesh = PolygonMesh();
+  
+    for(Size i=0; i<cloneCount; i++){  
+      Size PasteMeshID = cloneMeshID;
+      PasteOrigMeshID[i] = PasteMeshID;
+      Ref<PolygonMesh> source = OrigMeshes[PasteMeshID];
+      resultMesh.mergeMesh(source);
+      
+      if(i == 0){
+        PoiIDSlit[i] = OrigMeshes[PasteMeshID].pointCount();
+      }else{
+        PoiIDSlit[i] = OrigMeshes[PasteMeshID].pointCount() + PoiIDSlit[i-1];
+      }
+    }
+    
+    //deform
+    Ref<Vec3Attribute> positionsAttribute = resultMesh.getAttributes().positionsAttribute;
+ 
+    CloneToQuadPolygons_task<<<resultMesh.pointCount()>>>(
+        resultMesh.topology
+      , positionsAttribute.values
+      , SubTargetMesh
+      , SkinIDs
+      , SkinWeights
+      , Delta
+      , PoiIDSlit
+      , PasteOrigMeshID
+      , subdivIteration
+      , upV
+    );
+    
+    if(recomputeNormals){
+      resultMesh.recomputePointNormals();
+    }
+
+  }else{
+    report(\"Because of that, not work CloneToQuadPolygons!!\");
+  }  
+}"
+        }
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":2115.07,\"y\":-685.403}"
+        },
+      "name" : "checkQuad",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "name" : "exec",
+          "nodePortType" : "IO"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "targetMesh",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "allQuad",
+          "nodePortType" : "Out"
+          }
+        ],
+      "definition" : {
+        "objectType" : "Func",
+        "title" : "checkQuad",
+        "ports" : [
+          {
+            "objectType" : "ExecPort",
+            "name" : "exec",
+            "nodePortType" : "IO",
+            "execPortType" : "IO",
+            "typeSpec" : "Execute"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "targetMesh",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "PolygonMesh"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "allQuad",
+            "nodePortType" : "In",
+            "execPortType" : "Out",
+            "typeSpec" : "Boolean"
+            }
+          ],
+        "extDeps" : {},
+        "code" : "dfgEntry {
+  allQuad = true;
+  for(Size i=0; i<targetMesh.polygonCount(); i++){
+    LocalL8UInt32Array pois;
+    targetMesh.getPolygonPoints(i, pois);
+    if(pois.count != 4){
+      allQuad = false;
+      report(\"!!!!!!!!!!!No \"+i+\" polygon of targetMesh is not Quad!!!!!!!!!!!!!!\");
+      break;
+    }
+  }
+}
+"
+        }
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":1834.12,\"y\":-471.402}"
+        },
+      "name" : "PolygonCount_1",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "name" : "exec",
+          "nodePortType" : "IO"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "this",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "result",
+          "nodePortType" : "Out"
+          }
+        ],
+      "executable" : "Fabric.Exts.Geometry.PolygonMesh.PolygonCount",
+      "presetGUID" : "56BAC610F931E0B65ACDA79B9A6E57D5"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":2374.36,\"y\":-881.056}"
+        },
+      "name" : "Cache_1",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "name" : "exec",
+          "nodePortType" : "IO"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "value",
+          "nodePortType" : "In"
+          }
+        ],
+      "executable" : "Fabric.Core.Data.Cache",
+      "presetGUID" : "D903AFD981FE9214C69943F542D5FD60"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":2376.78,\"y\":-806.942}"
+        },
+      "name" : "Cache_2",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "name" : "exec",
+          "nodePortType" : "IO"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "value",
+          "nodePortType" : "In"
+          }
+        ],
+      "executable" : "Fabric.Core.Data.Cache",
+      "presetGUID" : "D903AFD981FE9214C69943F542D5FD60"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":2374.92,\"y\":-731.856}"
+        },
+      "name" : "Cache_3",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "name" : "exec",
+          "nodePortType" : "IO"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "value",
+          "nodePortType" : "In"
+          }
+        ],
+      "executable" : "Fabric.Core.Data.Cache",
+      "presetGUID" : "D903AFD981FE9214C69943F542D5FD60"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":1334.9,\"y\":-1032.32}"
+        },
+      "name" : "makeBaseQuadMeshes",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "name" : "exec",
+          "nodePortType" : "IO"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "OrigMeshes",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "t",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "baseQuadMeshes",
+          "nodePortType" : "Out"
+          }
+        ],
+      "definition" : {
+        "objectType" : "Func",
+        "title" : "makeBaseQuadMeshes",
+        "ports" : [
+          {
+            "objectType" : "ExecPort",
+            "name" : "exec",
+            "nodePortType" : "IO",
+            "execPortType" : "IO",
+            "typeSpec" : "Execute"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "OrigMeshes",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "PolygonMesh[]"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "t",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "Scalar"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "baseQuadMeshes",
+            "nodePortType" : "In",
+            "execPortType" : "Out",
+            "typeSpec" : "PolygonMesh[]"
+            }
+          ],
+        "extDeps" : {},
+        "code" : "dfgEntry {
+  baseQuadMeshes.resize(OrigMeshes.size());
+  for(Size i=0; i<OrigMeshes.size(); i++){
+    LocalBoundingVolume localBVol = OrigMeshes[i].getBoundingVolume();
+    Vec3 min;
+    Vec3 max;
+    localBVolGetBBox(Mat44(), localBVol, min, max);
+     
+    baseQuadMeshes[i] = PolygonMesh();
+    baseQuadMeshes[i].addPlane(Xfo(Vec3(((min+max)/2).x, min.y.linearInterpolate(max.y, t), ((min+max)/2).z)), (min-max).z, (min-max).x, 1, 1);
+  }
+}
+"
+        }
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":1165.56,\"y\":-626.153}"
+        },
+      "name" : "Integer_1",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "name" : "exec",
+          "nodePortType" : "IO"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "value",
+          "nodePortType" : "In",
+          "defaultValues" : {
+            "Integer" : 0
+            }
+          }
+        ],
+      "executable" : "Fabric.Core.Constants.Integer",
+      "presetGUID" : "70A8710A81C6715B65874101A33CC86E"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":1653.17,\"y\":-464.743}"
+        },
+      "name" : "Subdivide_v02_1",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "name" : "exec",
+          "nodePortType" : "IO"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "inMesh",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "iterations",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "subdividedMesh",
+          "nodePortType" : "Out"
+          }
+        ],
+      "definition" : {
+        "objectType" : "Graph",
+        "metadata" : {
+          "uiTextColor" : "{\n  \"r\" : 20,\n  \"g\" : 20,\n  \"b\" : 20\n  }",
+          "uiNodeColor" : "{\n  \"r\" : 121,\n  \"g\" : 134,\n  \"b\" : 143\n  }",
+          "uiHeaderColor" : "{\n  \"r\" : 80,\n  \"g\" : 98,\n  \"b\" : 110\n  }"
+          },
+        "title" : "Subdivide",
+        "ports" : [
+          {
+            "objectType" : "ExecPort",
+            "name" : "exec",
+            "nodePortType" : "IO",
+            "defaultValues" : {
+              "Execute" : {}
+              },
+            "execPortType" : "IO",
+            "typeSpec" : "Execute"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "inMesh",
+            "nodePortType" : "Out",
+            "defaultValues" : {
+              "PolygonMesh" : null
+              },
+            "execPortType" : "In"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "iterations",
+            "nodePortType" : "Out",
+            "defaultValues" : {
+              "Size" : 1
+              },
+            "execPortType" : "In",
+            "typeSpec" : "Size"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "subdividedMesh",
+            "nodePortType" : "In",
+            "defaultValues" : {
+              "PolygonMesh" : null
+              },
+            "execPortType" : "Out"
+            }
+          ],
+        "extDeps" : {},
+        "origPresetGUID" : "A94523B07D2F891C0B6665E2846E1A23",
+        "nodes" : [
+          {
+            "objectType" : "Inst",
+            "metadata" : {
+              "uiGraphPos" : "{\"x\":589.04443359375,\"y\":122.9690551757813}"
+              },
+            "name" : "Subdivide",
+            "ports" : [
+              {
+                "objectType" : "InstPort",
+                "name" : "exec",
+                "nodePortType" : "IO"
+                },
+              {
+                "objectType" : "InstPort",
+                "name" : "inMesh",
+                "nodePortType" : "In"
+                },
+              {
+                "objectType" : "InstPort",
+                "name" : "iterations",
+                "nodePortType" : "In",
+                "defaultValues" : {
+                  "Size" : 2
+                  }
+                },
+              {
+                "objectType" : "InstPort",
+                "name" : "outMesh",
+                "nodePortType" : "IO"
+                }
+              ],
+            "definition" : {
+              "objectType" : "Func",
+              "metadata" : {
+                "uiTextColor" : "{\n  \"r\" : 20,\n  \"g\" : 20,\n  \"b\" : 20\n  }",
+                "uiNodeColor" : "{\n  \"r\" : 121,\n  \"g\" : 134,\n  \"b\" : 143\n  }"
+                },
+              "title" : "Subdivide",
+              "ports" : [
+                {
+                  "objectType" : "ExecPort",
+                  "name" : "exec",
+                  "nodePortType" : "IO",
+                  "execPortType" : "IO",
+                  "typeSpec" : "Execute"
+                  },
+                {
+                  "objectType" : "ExecPort",
+                  "name" : "inMesh",
+                  "nodePortType" : "Out",
+                  "defaultValues" : {
+                    "PolygonMesh" : null
+                    },
+                  "execPortType" : "In",
+                  "typeSpec" : "PolygonMesh"
+                  },
+                {
+                  "objectType" : "ExecPort",
+                  "name" : "iterations",
+                  "nodePortType" : "Out",
+                  "defaultValues" : {
+                    "Size" : 1
+                    },
+                  "execPortType" : "In",
+                  "typeSpec" : "Size"
+                  },
+                {
+                  "objectType" : "ExecPort",
+                  "name" : "outMesh",
+                  "nodePortType" : "IO",
+                  "defaultValues" : {
+                    "PolygonMesh" : null
+                    },
+                  "execPortType" : "IO",
+                  "typeSpec" : "PolygonMesh"
+                  }
+                ],
+              "extDeps" : {},
+              "code" : "
+function Size GetEdgeCount(PolygonMesh mesh)
+{
+  Size edgesCount = 0;
+  for(Size i = 0; i < mesh.pointCount(); i++)
+  {
+    edgesCount += mesh.getPointEdgeCount(i);
+  }
+  return edgesCount / 2;
+}
+
+function Size GetAllPolygonsEdgesCount(PolygonMesh mesh)
+{
+  Size s = 0;
+  for(Size i = 0; i < mesh.polygonCount(); i++)
+  {
+    s += mesh.getPolygonSize(i);
+  }
+  return s;
+}
+
+inline Vec3 GetInnerEdgePoint(PolygonMesh mesh, Vec3 f1, Vec3 f2, Size v1Index, Size v2Index)
+{
+  return (mesh.getPointPosition(v1Index) + mesh.getPointPosition(v2Index) + f1 + f2) / 4;
+}
+
+inline Vec3 GetBoundaryEdgePoint(PolygonMesh mesh, Size v1Index, Size v2Index)
+{
+  return (mesh.getPointPosition(v1Index) + mesh.getPointPosition(v2Index)) / 2;
+}
+
+//Finally fill vertex data
+operator FillVertexData<<<i>>>(PolygonMesh mesh, Boolean edgeIsBorder[], 
+                               Size edgesCount, PolygonMeshEdge edgeEdge[], 
+                               io PolygonMesh sMesh) 
+{
+  Size polygonsCount = mesh.polygonCount();
+  Size pointsCount = mesh.pointCount();
+
+  Size ppCount = mesh.getPointPolygonCount(i);
+
+  if (ppCount == 1)
+  {
+    Vec3 pos = mesh.getPointPosition(i);
+    sMesh.setPointPosition(polygonsCount + edgesCount + i, pos);
+    return;
+  }
+
+  Vec3 fv;
+  Boolean isPointBorder = false;
+  for(Size j = 0; j < ppCount; j++)
+  {
+    Size polygonPointIndex;
+    Size pIndex;
+    mesh.getPointPolygonAndIndex(i, j, pIndex, polygonPointIndex);
+    if(!isPointBorder && mesh.isPolygonBorder(pIndex, polygonPointIndex))
+      isPointBorder = true;
+    fv += sMesh.getPointPosition(pIndex);
+  }
+  if(isPointBorder)
+  {
+    Size edgeCount = mesh.getPointEdgeCount(i);
+    Vec3 ec;
+    Size eNum = 0;
+    for(Size j = 0; j < edgeCount; j++)
+    {
+      PolygonMeshEdge e = mesh.getPointEdge(i, j);
+      //check is this edge is border
+      Boolean isEdgeBorder = false;
+      for(Size eIter = 0; eIter < edgeIsBorder.size(); eIter++)
+      {
+        if(edgeEdge[eIter] == e && edgeIsBorder[eIter])
+        {
+          isEdgeBorder = true;
+          break;
+        }
+      }
+      if(isEdgeBorder)
+      {
+        ec += (mesh.getPointPosition(mesh.getEdgeFirstPoint(e)) + mesh.getPointPosition(mesh.getEdgeSecondPoint(e))) / 2;
+        eNum++;
+      }
+    }
+    Vec3 pos = (mesh.getPointPosition(i) + ec / eNum) / 2;
+    sMesh.setPointPosition(polygonsCount + edgesCount + i, pos);
+  }
+  else
+  {
+    fv = fv / ppCount;
+    Size edgeCount = mesh.getPointEdgeCount(i);
+    Vec3 ec;
+    for(Size j = 0; j < edgeCount; j++)
+    {
+      PolygonMeshEdge e = mesh.getPointEdge(i, j);
+      ec += (mesh.getPointPosition(mesh.getEdgeFirstPoint(e)) + mesh.getPointPosition(mesh.getEdgeSecondPoint(e))) / 2;
+    }
+    ec = ec / edgeCount;
+    Vec3 pos = ((ppCount - 3.0) / ppCount) * mesh.getPointPosition(i) + (1.0 / ppCount) * fv + (2.0 / ppCount) * ec;
+    sMesh.setPointPosition(polygonsCount + edgesCount + i, pos);
+  }
+}
+
+operator AddPolygonsAndFillVertex<<<taskIndex>>> (PolygonMesh mesh, Boolean edgeIsBorder[], 
+                               Size edgesCount, PolygonMeshEdge edgeEdge[], Size edgeIndexes[],
+                               io PolygonMesh sMesh)
+{
+  if (taskIndex == 0) 
+  {
+    Size polygonsCount = mesh.polygonCount();
+    //Add polygons
+    Size iter = 0;
+    for(Size polygonIndex = 0; polygonIndex < polygonsCount; polygonIndex++)
+    {
+      Size polygonSize = mesh.getPolygonSize(polygonIndex);
+      for(Size ppIndex = 0; ppIndex < polygonSize; ppIndex++)
+      {
+        Size pointIndex = mesh.getPolygonPoint(polygonIndex, ppIndex);
+        Size prevEdgeIndex = iter - 1;
+        if(ppIndex == 0)
+        {
+          prevEdgeIndex = iter + polygonSize - 1;
+        }
+        sMesh.addPolygon(polygonIndex, 
+                         polygonsCount + edgeIndexes[iter], 
+                         polygonsCount + edgesCount + pointIndex, 
+                         polygonsCount + edgeIndexes[prevEdgeIndex]);
+        iter++;
+      }
+    }
+  }
+  else if (taskIndex == 1) 
+  {
+    FillVertexData<<<mesh.pointCount()>>>(mesh, edgeIsBorder, edgesCount, edgeEdge, sMesh);
+  }
+}
+
+
+function PolygonMesh MakeSubdivision(PolygonMesh mesh)
+{
+  Size polygonsCount = mesh.polygonCount();
+  Size edgesCount = GetEdgeCount(mesh);
+  Size pointsCount = mesh.pointCount();
+  
+  Size newVertexCount = polygonsCount + edgesCount + pointsCount;
+
+  //Build new mesh
+  PolygonMesh sMesh = PolygonMesh();
+  sMesh.beginStructureChanges();
+  sMesh.createPoints(newVertexCount);
+  sMesh.endStructureChanges();
+
+  Size totalEdgesCount = GetAllPolygonsEdgesCount(mesh);
+  Size edgeFaceIndex[];
+  Boolean edgeIsBorder[];
+  PolygonMeshEdge edgeEdge[];
+  Boolean edgeIsConsidered[];
+  Size edgeIndexes[];
+  edgeFaceIndex.resize(totalEdgesCount);
+  edgeIsBorder.resize(totalEdgesCount);
+  edgeEdge.resize(totalEdgesCount);
+  edgeIsConsidered.resize(totalEdgesCount);
+  edgeIndexes.resize(totalEdgesCount);//store indexes of new edge vertices
+
+  Size iterator = 0;
+  for(Size polygonIndex = 0; polygonIndex < polygonsCount; polygonIndex++)
+  {
+    Size polygonSize = mesh.getPolygonSize(polygonIndex);
+    Vec3 v;
+    for(Size ppIndex = 0; ppIndex < polygonSize; ppIndex++)
+    {
+      Size pointIndex = mesh.getPolygonPoint(polygonIndex, ppIndex);
+      v += mesh.getPointPosition(pointIndex);
+      PolygonMeshEdge edge = mesh.getPolygonEdge(polygonIndex, ppIndex);
+      edgeFaceIndex[iterator] = polygonIndex;
+      edgeIsBorder[iterator] = mesh.isPolygonBorder(polygonIndex, ppIndex);
+      edgeEdge[iterator] = mesh.getPolygonEdge(polygonIndex, ppIndex);
+      edgeIsConsidered[iterator] = false;
+      iterator++;
+    }
+    sMesh.setPointPosition(polygonIndex, v / polygonSize);
+  }
+  
+  //Next go throw edges and find two equal edges
+  Size edgeIterator = 0;
+  for(Size eIndex = 0; eIndex < totalEdgesCount; eIndex++)
+  {
+    PolygonMeshEdge e = edgeEdge[eIndex];
+    if(!edgeIsConsidered[eIndex])
+    {
+      if(edgeIsBorder[eIndex])
+      {//this is the boundary edge
+        edgeIsConsidered[eIndex] = true;
+        Vec3 pos = GetBoundaryEdgePoint(mesh, mesh.getEdgeFirstPoint(e), mesh.getEdgeSecondPoint(e));
+        sMesh.setPointPosition(polygonsCount + edgeIterator, pos);
+        edgeIndexes[eIndex] = edgeIterator;
+        edgeIterator++;
+      }
+      else
+      {
+        //Find the same edge
+        Boolean findPair = false;
+        for(Size j = eIndex + 1; j < totalEdgesCount; j++)
+        {
+          if(e == edgeEdge[j])
+          {
+            Vec3 pos = GetInnerEdgePoint(mesh, 
+                                         sMesh.getPointPosition(edgeFaceIndex[eIndex]), 
+                                         sMesh.getPointPosition(edgeFaceIndex[j]), 
+                                         mesh.getEdgeFirstPoint(e), 
+                                         mesh.getEdgeSecondPoint(e));
+            sMesh.setPointPosition(polygonsCount + edgeIterator, pos);
+            edgeIndexes[eIndex] = edgeIterator;
+            edgeIndexes[j] = edgeIterator;
+            edgeIterator++;
+            findPair = true;
+            edgeIsConsidered[eIndex] = true;
+            edgeIsConsidered[j] = true;
+            j = totalEdgesCount;
+          }
+        }
+        if(!findPair)
+        {//this is the boundary edge
+          Vec3 pos = GetBoundaryEdgePoint(mesh, mesh.getEdgeFirstPoint(e), mesh.getEdgeSecondPoint(e));
+          sMesh.setPointPosition(polygonsCount + edgeIterator, pos);
+          edgeIsConsidered[eIndex] = true;
+          edgeIndexes[eIndex] = edgeIterator;
+          edgeIterator++;
+        }
+      }
+    }
+  }
+
+  sMesh.beginStructureChanges();
+  AddPolygonsAndFillVertex<<<2>>>(mesh, edgeIsBorder, edgesCount, edgeEdge, edgeIndexes, sMesh);
+  sMesh.endStructureChanges();
+
+  return sMesh;
+}
+
+
+dfgEntry 
+{
+  outMesh.clear();
+  if(iterations == 0)
+  {
+    outMesh.copy(inMesh);
+  }
+  else
+  {
+    PolygonMesh subdividedMesh = null, cage = null;
+    for(Size step = 0; step < iterations; step++)
+    {
+      cage = (step == 0) ? inMesh : subdividedMesh;
+      subdividedMesh = MakeSubdivision(cage);
+    }
+    outMesh.copy(subdividedMesh);
+    outMesh.recomputePointNormals();
+  }
+}
+"
+              }
+            },
+          {
+            "objectType" : "Inst",
+            "metadata" : {
+              "uiGraphPos" : "{\"x\":335.0,\"y\":214.0}"
+              },
+            "name" : "EmptyPolygonMesh_1",
+            "ports" : [
+              {
+                "objectType" : "InstPort",
+                "name" : "exec",
+                "nodePortType" : "IO"
+                },
+              {
+                "objectType" : "InstPort",
+                "name" : "mesh",
+                "nodePortType" : "Out"
+                },
+              {
+                "objectType" : "InstPort",
+                "name" : "debugName",
+                "nodePortType" : "In"
+                }
+              ],
+            "executable" : "Fabric.Exts.Geometry.PolygonMesh.EmptyPolygonMesh",
+            "presetGUID" : "D78522D6442F98D2BA57F676845585E9"
+            }
+          ],
+        "connections" : {
+          "inMesh" : [
+            "Subdivide.inMesh"
+            ],
+          "iterations" : [
+            "Subdivide.iterations"
+            ],
+          "Subdivide.outMesh" : [
+            "subdividedMesh"
+            ],
+          "EmptyPolygonMesh_1.mesh" : [
+            "Subdivide.outMesh"
+            ]
+          }
+        }
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":1684.81,\"y\":-983.616}"
+        },
+      "name" : "Subdivide_v02_2",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "name" : "exec",
+          "nodePortType" : "IO"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "inMeshes",
+          "nodePortType" : "In"
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "iterations",
+          "nodePortType" : "In",
+          "defaultValues" : {
+            "Size" : 2
+            }
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "linearDivide",
+          "nodePortType" : "In",
+          "defaultValues" : {
+            "Boolean" : false
+            }
+          },
+        {
+          "objectType" : "InstPort",
+          "name" : "outMeshes",
+          "nodePortType" : "Out"
+          }
+        ],
+      "definition" : {
+        "objectType" : "Func",
+        "metadata" : {
+          "uiTextColor" : "{\n  \"r\" : 20,\n  \"g\" : 20,\n  \"b\" : 20\n  }",
+          "uiNodeColor" : "{\n  \"r\" : 121,\n  \"g\" : 134,\n  \"b\" : 143\n  }"
+          },
+        "title" : "Subdivide",
+        "ports" : [
+          {
+            "objectType" : "ExecPort",
+            "name" : "exec",
+            "nodePortType" : "IO",
+            "execPortType" : "IO",
+            "typeSpec" : "Execute"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "inMeshes",
+            "nodePortType" : "Out",
+            "defaultValues" : {
+              "PolygonMesh" : null
+              },
+            "execPortType" : "In",
+            "typeSpec" : "PolygonMesh[]"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "iterations",
+            "nodePortType" : "Out",
+            "defaultValues" : {
+              "Size" : 1
+              },
+            "execPortType" : "In",
+            "typeSpec" : "Size"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "linearDivide",
+            "nodePortType" : "Out",
+            "execPortType" : "In",
+            "typeSpec" : "Boolean"
+            },
+          {
+            "objectType" : "ExecPort",
+            "name" : "outMeshes",
+            "nodePortType" : "In",
+            "execPortType" : "Out",
+            "typeSpec" : "PolygonMesh[]"
+            }
+          ],
+        "extDeps" : {},
+        "code" : "//v2.0//download by FE forum
+//v2.1//add linearSubdivide
+
+require Geometry;
+
+
+function Size GetEdgeCount(PolygonMesh mesh)
+{
+  Size edgesCount = 0;
+  for(Size i = 0; i < mesh.pointCount(); i++)
+  {
+    edgesCount += mesh.getPointEdgeCount(i);
+  }
+  return edgesCount / 2;
+}
+
+function Size GetAllPolygonsEdgesCount(PolygonMesh mesh)
+{
+  Size s = 0;
+  for(Size i = 0; i < mesh.polygonCount(); i++)
+  {
+    s += mesh.getPolygonSize(i);
+  }
+  return s;
+}
+
+inline Vec3 GetInnerEdgePoint(PolygonMesh mesh, Vec3 f1, Vec3 f2, Size v1Index, Size v2Index, Boolean linearDivide)
+{
+  if(linearDivide){
+    return (mesh.getPointPosition(v1Index) + mesh.getPointPosition(v2Index)) / 2;
+  }else{
+    return (mesh.getPointPosition(v1Index) + mesh.getPointPosition(v2Index) + f1 + f2) / 4;
+  }
+}
+
+inline Vec3 GetBoundaryEdgePoint(PolygonMesh mesh, Size v1Index, Size v2Index)
+{
+  return (mesh.getPointPosition(v1Index) + mesh.getPointPosition(v2Index)) / 2;
+}
+
+//Finally fill vertex data
+operator FillVertexData<<<i>>>(PolygonMesh mesh, Boolean edgeIsBorder[], 
+                               Size edgesCount, PolygonMeshEdge edgeEdge[], 
+                               io PolygonMesh sMesh, Boolean linearDivide) 
+{
+  Size polygonsCount = mesh.polygonCount();
+  Size pointsCount = mesh.pointCount();
+
+  Size ppCount = mesh.getPointPolygonCount(i);
+
+  if (ppCount == 1)
+  {
+    Vec3 pos = mesh.getPointPosition(i);
+    sMesh.setPointPosition(polygonsCount + edgesCount + i, pos);
+    return;
+  }
+
+  Vec3 fv;
+  Boolean isPointBorder = false;
+  for(Size j = 0; j < ppCount; j++)
+  {
+    Size polygonPointIndex;
+    Size pIndex;
+    mesh.getPointPolygonAndIndex(i, j, pIndex, polygonPointIndex);
+    if(!isPointBorder && mesh.isPolygonBorder(pIndex, polygonPointIndex))
+      isPointBorder = true;
+    fv += sMesh.getPointPosition(pIndex);
+  }
+  if(isPointBorder)
+  {
+    Size edgeCount = mesh.getPointEdgeCount(i);
+    Vec3 ec;
+    Size eNum = 0;
+    for(Size j = 0; j < edgeCount; j++)
+    {
+      PolygonMeshEdge e = mesh.getPointEdge(i, j);
+      //check is this edge is border
+      Boolean isEdgeBorder = false;
+      for(Size eIter = 0; eIter < edgeIsBorder.size(); eIter++)
+      {
+        if(edgeEdge[eIter] == e && edgeIsBorder[eIter])
+        {
+          isEdgeBorder = true;
+          break;
+        }
+      }
+      if(isEdgeBorder)
+      {
+        ec += (mesh.getPointPosition(mesh.getEdgeFirstPoint(e)) + mesh.getPointPosition(mesh.getEdgeSecondPoint(e))) / 2;
+        eNum++;
+      }
+    }
+    Vec3 pos = (mesh.getPointPosition(i) + ec / eNum) / 2;
+    sMesh.setPointPosition(polygonsCount + edgesCount + i, pos);
+  }
+  else
+  {
+    fv = fv / ppCount;
+    Size edgeCount = mesh.getPointEdgeCount(i);
+    Vec3 ec;
+    for(Size j = 0; j < edgeCount; j++)
+    {
+      PolygonMeshEdge e = mesh.getPointEdge(i, j);
+      ec += (mesh.getPointPosition(mesh.getEdgeFirstPoint(e)) + mesh.getPointPosition(mesh.getEdgeSecondPoint(e))) / 2;
+    }
+    ec = ec / edgeCount;
+    Vec3 pos;
+    if(linearDivide){
+      pos = mesh.getPointPosition(i);
+    }else{
+      pos = ((ppCount - 3.0) / ppCount) * mesh.getPointPosition(i) + (1.0 / ppCount) * fv + (2.0 / ppCount) * ec;
+    }
+    sMesh.setPointPosition(polygonsCount + edgesCount + i, pos);
+  }
+}
+
+operator AddPolygonsAndFillVertex<<<taskIndex>>> (PolygonMesh mesh, Boolean edgeIsBorder[], 
+                               Size edgesCount, PolygonMeshEdge edgeEdge[], Size edgeIndexes[],
+                               io PolygonMesh sMesh, Boolean linearDivide)
+{
+  if (taskIndex == 0) 
+  {
+    Size polygonsCount = mesh.polygonCount();
+    //Add polygons
+    Size iter = 0;
+    for(Size polygonIndex = 0; polygonIndex < polygonsCount; polygonIndex++)
+    {
+      Size polygonSize = mesh.getPolygonSize(polygonIndex);
+      for(Size ppIndex = 0; ppIndex < polygonSize; ppIndex++)
+      {
+        Size pointIndex = mesh.getPolygonPoint(polygonIndex, ppIndex);
+        Size prevEdgeIndex = iter - 1;
+        if(ppIndex == 0)
+        {
+          prevEdgeIndex = iter + polygonSize - 1;
+        }
+        sMesh.addPolygon(polygonIndex, 
+                         polygonsCount + edgeIndexes[iter], 
+                         polygonsCount + edgesCount + pointIndex, 
+                         polygonsCount + edgeIndexes[prevEdgeIndex]);
+        iter++;
+      }
+    }
+  }
+  else if (taskIndex == 1) 
+  {
+    FillVertexData<<<mesh.pointCount()>>>(mesh, edgeIsBorder, edgesCount, edgeEdge, sMesh, linearDivide);
+  }
+}
+
+
+function PolygonMesh MakeSubdivision(PolygonMesh mesh, Boolean linearDivide)
+{
+  Size polygonsCount = mesh.polygonCount();
+  Size edgesCount = GetEdgeCount(mesh);
+  Size pointsCount = mesh.pointCount();
+  
+  Size newVertexCount = polygonsCount + edgesCount + pointsCount;
+
+  //Build new mesh
+  PolygonMesh sMesh = PolygonMesh();
+  sMesh.beginStructureChanges();
+  sMesh.createPoints(newVertexCount);
+  sMesh.endStructureChanges();
+
+  Size totalEdgesCount = GetAllPolygonsEdgesCount(mesh);
+  Size edgeFaceIndex[];
+  Boolean edgeIsBorder[];
+  PolygonMeshEdge edgeEdge[];
+  Boolean edgeIsConsidered[];
+  Size edgeIndexes[];
+  edgeFaceIndex.resize(totalEdgesCount);
+  edgeIsBorder.resize(totalEdgesCount);
+  edgeEdge.resize(totalEdgesCount);
+  edgeIsConsidered.resize(totalEdgesCount);
+  edgeIndexes.resize(totalEdgesCount);//store indexes of new edge vertices
+
+  Size iterator = 0;
+  for(Size polygonIndex = 0; polygonIndex < polygonsCount; polygonIndex++)
+  {
+    Size polygonSize = mesh.getPolygonSize(polygonIndex);
+    Vec3 v;
+    for(Size ppIndex = 0; ppIndex < polygonSize; ppIndex++)
+    {
+      Size pointIndex = mesh.getPolygonPoint(polygonIndex, ppIndex);
+      v += mesh.getPointPosition(pointIndex);
+      PolygonMeshEdge edge = mesh.getPolygonEdge(polygonIndex, ppIndex);
+      edgeFaceIndex[iterator] = polygonIndex;
+      edgeIsBorder[iterator] = mesh.isPolygonBorder(polygonIndex, ppIndex);
+      edgeEdge[iterator] = mesh.getPolygonEdge(polygonIndex, ppIndex);
+      edgeIsConsidered[iterator] = false;
+      iterator++;
+    }
+    sMesh.setPointPosition(polygonIndex, v / polygonSize);
+  }
+  
+  //Next go throw edges and find two equal edges
+  Size edgeIterator = 0;
+  for(Size eIndex = 0; eIndex < totalEdgesCount; eIndex++)
+  {
+    PolygonMeshEdge e = edgeEdge[eIndex];
+    if(!edgeIsConsidered[eIndex])
+    {
+      if(edgeIsBorder[eIndex])
+      {//this is the boundary edge
+        edgeIsConsidered[eIndex] = true;
+        Vec3 pos = GetBoundaryEdgePoint(mesh, mesh.getEdgeFirstPoint(e), mesh.getEdgeSecondPoint(e));
+        sMesh.setPointPosition(polygonsCount + edgeIterator, pos);
+        edgeIndexes[eIndex] = edgeIterator;
+        edgeIterator++;
+      }
+      else
+      {
+        //Find the same edge
+        Boolean findPair = false;
+        for(Size j = eIndex + 1; j < totalEdgesCount; j++)
+        {
+          if(e == edgeEdge[j])
+          {
+            Vec3 pos = GetInnerEdgePoint(mesh, 
+                                         sMesh.getPointPosition(edgeFaceIndex[eIndex]), 
+                                         sMesh.getPointPosition(edgeFaceIndex[j]), 
+                                         mesh.getEdgeFirstPoint(e), 
+                                         mesh.getEdgeSecondPoint(e),
+                                         linearDivide);
+            sMesh.setPointPosition(polygonsCount + edgeIterator, pos);
+            edgeIndexes[eIndex] = edgeIterator;
+            edgeIndexes[j] = edgeIterator;
+            edgeIterator++;
+            findPair = true;
+            edgeIsConsidered[eIndex] = true;
+            edgeIsConsidered[j] = true;
+            j = totalEdgesCount;
+          }
+        }
+        if(!findPair)
+        {//this is the boundary edge
+          Vec3 pos = GetBoundaryEdgePoint(mesh, mesh.getEdgeFirstPoint(e), mesh.getEdgeSecondPoint(e));
+          sMesh.setPointPosition(polygonsCount + edgeIterator, pos);
+          edgeIsConsidered[eIndex] = true;
+          edgeIndexes[eIndex] = edgeIterator;
+          edgeIterator++;
+        }
+      }
+    }
+  }
+
+  sMesh.beginStructureChanges();
+  AddPolygonsAndFillVertex<<<2>>>(mesh, edgeIsBorder, edgesCount, edgeEdge, edgeIndexes, sMesh, linearDivide);
+  sMesh.endStructureChanges();
+
+  return sMesh;
+}
+
+function PolygonMesh MakeSubdivision(PolygonMesh mesh)
+{ 
+  PolygonMesh sMesh();
+	sMesh = MakeSubdivision(mesh, false);
+  return sMesh;
+}
+
+function PolygonMesh Subdivision_CK(PolygonMesh inMesh, Size iterations, Boolean linearDivide){
+  PolygonMesh result();
+	  if(iterations == 0){
+		result.copy(inMesh);
+	  }else{
+		PolygonMesh subdividedMesh = null, cage = null;
+		for(Size step = 0; step < iterations; step++)
+		{
+		  cage = (step == 0) ? inMesh : subdividedMesh;
+		  subdividedMesh = MakeSubdivision(cage, linearDivide);
+		}
+		result.copy(subdividedMesh);
+		result.recomputePointNormals();
+	  }
+  return result;
+}
+
+dfgEntry 
+{
+  outMeshes.resize(inMeshes.size());
+  for(Size i=0; i<inMeshes.size(); i++){
+    outMeshes[i] = Subdivision_CK(inMeshes[i], iterations, linearDivide);
+  }
+}
+"
+        }
+      }
+    ],
+  "connections" : {
+    "cloneOrigMeshID" : [
+      "CloneToQuadPolygons.cloneMeshID"
+      ],
+    "hight" : [
+      "getLocationWeightAndDelta.hight"
+      ],
+    "t" : [
+      "makeBaseQuadMeshes.t"
+      ],
+    "smoothLv" : [
+      "Integer_1.value"
+      ],
+    "recomputeNormals" : [
+      "CloneToQuadPolygons.recomputeNormals"
+      ],
+    "targetMesh" : [
+      "checkQuad.targetMesh",
+      "Subdivide_v02_1.inMesh"
+      ],
+    "OrigMeshes" : [
+      "getLocationWeightAndDelta.OrigMeshes",
+      "CloneToQuadPolygons.OrigMeshes",
+      "makeBaseQuadMeshes.OrigMeshes"
+      ],
+    "accuracySwich.result" : [
+      "CloneToQuadPolygons.subdivIteration",
+      "Subdivide_v02_1.iterations",
+      "Subdivide_v02_2.iterations"
+      ],
+    "accuracySwich.upV" : [
+      "getLocationWeightAndDelta.upV",
+      "CloneToQuadPolygons.upV"
+      ],
+    "getLocationWeightAndDelta.Delta" : [
+      "Cache_1.value"
+      ],
+    "getLocationWeightAndDelta.SkinIDs" : [
+      "Cache_2.value"
+      ],
+    "getLocationWeightAndDelta.SkinWeight" : [
+      "Cache_3.value"
+      ],
+    "CloneToQuadPolygons.resultMesh" : [
+      "resultMesh"
+      ],
+    "checkQuad.allQuad" : [
+      "CloneToQuadPolygons.allQuad"
+      ],
+    "PolygonCount_1.result" : [
+      "CloneToQuadPolygons.cloneCount"
+      ],
+    "Cache_1.value" : [
+      "CloneToQuadPolygons.Delta"
+      ],
+    "Cache_2.value" : [
+      "CloneToQuadPolygons.SkinIDs"
+      ],
+    "Cache_3.value" : [
+      "CloneToQuadPolygons.SkinWeights"
+      ],
+    "makeBaseQuadMeshes.baseQuadMeshes" : [
+      "Subdivide_v02_2.inMeshes"
+      ],
+    "Integer_1.value" : [
+      "accuracySwich.accuracy"
+      ],
+    "Subdivide_v02_1.inMesh" : [
+      "PolygonCount_1.this"
+      ],
+    "Subdivide_v02_1.subdividedMesh" : [
+      "CloneToQuadPolygons.SubTargetMesh"
+      ],
+    "Subdivide_v02_2.outMeshes" : [
+      "getLocationWeightAndDelta.SuvQuadMeshes"
+      ]
+    },
+  "bindingMetadata" : {
+    "maya_id" : "2"
+    },
+  "requiredPresets" : {
+    "Fabric.Exts.Geometry.PolygonMesh.PolygonCount" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiDocUrl" : "http://docs.fabric-engine.com/FabricEngine/2.3.0/HTML/KLExtensionsGuide/Geometry/PolygonMesh.html",
+        "uiTooltip" : "Returns the number of polygons.\n\n Supported by PolygonMesh"
+        },
+      "title" : "PolygonCount",
+      "ports" : [
+        {
+          "objectType" : "ExecPort",
+          "name" : "exec",
+          "nodePortType" : "IO",
+          "execPortType" : "IO",
+          "typeSpec" : "Execute"
+          },
+        {
+          "objectType" : "ExecPort",
+          "metadata" : {
+            "uiColor" : "{\n  \"r\" : 51,\n  \"g\" : 1,\n  \"b\" : 106\n  }"
+            },
+          "name" : "this",
+          "nodePortType" : "Out",
+          "execPortType" : "In",
+          "typeSpec" : "PolygonMesh"
+          },
+        {
+          "objectType" : "ExecPort",
+          "name" : "result",
+          "nodePortType" : "In",
+          "execPortType" : "Out",
+          "typeSpec" : "Size"
+          }
+        ],
+      "extDeps" : {
+        "Geometry" : "*"
+        },
+      "presetGUID" : "56BAC610F931E0B65ACDA79B9A6E57D5",
+      "code" : "require Geometry;
+
+dfgEntry {
+  result = this.polygonCount();
+}
+"
+      },
+    "Fabric.Core.Data.Cache" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiNodeColor" : "{\n  \"r\" : 214,\n  \"g\" : 191,\n  \"b\" : 103\n  }",
+        "uiAlwaysShowDaisyChainPorts" : "true",
+        "uiHeaderColor" : "{\n  \"r\" : 188,\n  \"g\" : 129,\n  \"b\" : 83\n  }"
+        },
+      "title" : "Cache",
+      "cacheRule" : "always",
+      "ports" : [
+        {
+          "objectType" : "ExecPort",
+          "name" : "exec",
+          "nodePortType" : "IO",
+          "execPortType" : "IO",
+          "typeSpec" : "Execute"
+          },
+        {
+          "objectType" : "ExecPort",
+          "name" : "value",
+          "nodePortType" : "Out",
+          "execPortType" : "In",
+          "typeSpec" : "$TYPE$"
+          }
+        ],
+      "extDeps" : {},
+      "presetGUID" : "D903AFD981FE9214C69943F542D5FD60",
+      "code" : "dfgEntry {
+}
+"
+      },
+    "Fabric.Core.Constants.Integer" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiAlwaysShowDaisyChainPorts" : "true"
+        },
+      "title" : "Integer",
+      "ports" : [
+        {
+          "objectType" : "ExecPort",
+          "name" : "exec",
+          "nodePortType" : "IO",
+          "execPortType" : "IO",
+          "typeSpec" : "Execute"
+          },
+        {
+          "objectType" : "ExecPort",
+          "name" : "value",
+          "nodePortType" : "Out",
+          "execPortType" : "In",
+          "typeSpec" : "Integer"
+          }
+        ],
+      "extDeps" : {},
+      "presetGUID" : "70A8710A81C6715B65874101A33CC86E",
+      "code" : "dfgEntry {
+}
+"
+      },
+    "Fabric.Exts.Geometry.PolygonMesh.EmptyPolygonMesh" : {
+      "objectType" : "Graph",
+      "metadata" : {
+        "uiGraphPan" : "{\n  \"x\" : 477.0,\n  \"y\" : 61.0\n  }"
+        },
+      "title" : "EmptyPolygonMesh",
+      "cacheRule" : "never",
+      "ports" : [
+        {
+          "objectType" : "ExecPort",
+          "name" : "exec",
+          "nodePortType" : "IO",
+          "execPortType" : "IO",
+          "typeSpec" : "Execute"
+          },
+        {
+          "objectType" : "ExecPort",
+          "name" : "mesh",
+          "nodePortType" : "In",
+          "execPortType" : "Out",
+          "typeSpec" : "PolygonMesh"
+          },
+        {
+          "objectType" : "ExecPort",
+          "name" : "debugName",
+          "nodePortType" : "Out",
+          "execPortType" : "In",
+          "typeSpec" : "String"
+          }
+        ],
+      "extDeps" : {},
+      "presetGUID" : "D78522D6442F98D2BA57F676845585E9",
+      "nodes" : [
+        {
+          "objectType" : "Inst",
+          "metadata" : {
+            "uiGraphPos" : "{\"x\":29.0,\"y\":24.0}"
+            },
+          "name" : "PolygonMesh",
+          "ports" : [
+            {
+              "objectType" : "InstPort",
+              "name" : "exec",
+              "nodePortType" : "IO"
+              },
+            {
+              "objectType" : "InstPort",
+              "name" : "debugName",
+              "nodePortType" : "In"
+              },
+            {
+              "objectType" : "InstPort",
+              "name" : "float64Positions",
+              "nodePortType" : "In"
+              },
+            {
+              "objectType" : "InstPort",
+              "name" : "result",
+              "nodePortType" : "Out"
+              }
+            ],
+          "executable" : "Fabric.Exts.Geometry.PolygonMesh.PolygonMesh",
+          "presetGUID" : "18F3A38BE7497D6BFC18A148A520B66D"
+          },
+        {
+          "objectType" : "Inst",
+          "metadata" : {
+            "uiGraphPos" : "{\"x\": 951, \"y\": 145}"
+            },
+          "name" : "Clear",
+          "ports" : [
+            {
+              "objectType" : "InstPort",
+              "name" : "exec",
+              "nodePortType" : "IO"
+              },
+            {
+              "objectType" : "InstPort",
+              "name" : "this",
+              "nodePortType" : "IO"
+              }
+            ],
+          "cacheRule" : "never",
+          "executable" : "Fabric.Exts.Geometry.Func.Clear",
+          "presetGUID" : "96D1EC86835296FFDC60533717804EE7"
+          },
+        {
+          "objectType" : "Var",
+          "metadata" : {
+            "uiGraphPos" : "{\"x\": 744, \"y\": 122}"
+            },
+          "name" : "meshVar",
+          "ports" : [
+            {
+              "objectType" : "VarPort",
+              "name" : "value",
+              "nodePortType" : "IO"
+              }
+            ],
+          "dataType" : "PolygonMesh",
+          "extDep" : "Geometry:*"
+          }
+        ],
+      "connections" : {
+        "debugName" : [
+          "PolygonMesh.debugName"
+          ],
+        "PolygonMesh.result" : [
+          "meshVar.value"
+          ],
+        "Clear.this" : [
+          "mesh"
+          ],
+        "meshVar.value" : [
+          "Clear.this"
+          ]
+        }
+      },
+    "Fabric.Exts.Geometry.PolygonMesh.PolygonMesh" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiDocUrl" : "http://docs.fabric-engine.com/FabricEngine/2.3.0/HTML/KLExtensionsGuide/Geometry/PolygonMesh.html",
+        "uiTooltip" : "Constructor.\n\n Supported by PolygonMesh"
+        },
+      "title" : "PolygonMesh",
+      "ports" : [
+        {
+          "objectType" : "ExecPort",
+          "name" : "exec",
+          "nodePortType" : "IO",
+          "execPortType" : "IO",
+          "typeSpec" : "Execute"
+          },
+        {
+          "objectType" : "ExecPort",
+          "name" : "debugName",
+          "nodePortType" : "Out",
+          "execPortType" : "In",
+          "typeSpec" : "String"
+          },
+        {
+          "objectType" : "ExecPort",
+          "name" : "float64Positions",
+          "nodePortType" : "Out",
+          "execPortType" : "In",
+          "typeSpec" : "Boolean"
+          },
+        {
+          "objectType" : "ExecPort",
+          "metadata" : {
+            "uiColor" : "{\n  \"r\" : 51,\n  \"g\" : 1,\n  \"b\" : 106\n  }"
+            },
+          "name" : "result",
+          "nodePortType" : "In",
+          "execPortType" : "Out",
+          "typeSpec" : "PolygonMesh"
+          }
+        ],
+      "extDeps" : {
+        "Geometry" : "*"
+        },
+      "presetGUID" : "18F3A38BE7497D6BFC18A148A520B66D",
+      "code" : "require Geometry;
+
+dfgEntry {
+  result = PolygonMesh(debugName, float64Positions);
+}
+"
+      },
+    "Fabric.Exts.Geometry.Func.Clear" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiDocUrl" : "http://docs.fabric-engine.com/FabricEngine/2.3.0/HTML/KLExtensionsGuide/Geometry/GeometryAttributes.html",
+        "uiTooltip" : "Removes all attributes, and resets attribute value array sizes to 0.\n\n Supported by GeometryAttributes,BaseGeometry,Points,Lines,PolygonMesh"
+        },
+      "title" : "Clear",
+      "ports" : [
+        {
+          "objectType" : "ExecPort",
+          "name" : "exec",
+          "nodePortType" : "IO",
+          "execPortType" : "IO",
+          "typeSpec" : "Execute"
+          },
+        {
+          "objectType" : "ExecPort",
+          "name" : "this",
+          "nodePortType" : "IO",
+          "execPortType" : "IO",
+          "typeSpec" : "$TYPE$"
+          }
+        ],
+      "extDeps" : {
+        "Geometry" : "*"
+        },
+      "presetGUID" : "96D1EC86835296FFDC60533717804EE7",
+      "code" : "require Geometry;
+
+dfgEntry {
+  this.clear();
+}
+"
+      }
+    },
+  "args" : [
+    {
+      "type" : "PolygonMesh",
+      "value" : null,
+      "ext" : "Geometry"
+      },
+    {
+      "type" : "SInt32",
+      "value" : 0
+      },
+    {
+      "type" : "Float32",
+      "value" : 1
+      },
+    {
+      "type" : "Float32",
+      "value" : 0
+      },
+    {
+      "type" : "SInt32",
+      "value" : 1
+      },
+    {
+      "type" : "Boolean",
+      "value" : false
+      },
+    {
+      "type" : "PolygonMesh",
+      "value" : null,
+      "ext" : "Geometry"
+      },
+    {
+      "type" : "PolygonMesh[]",
+      "value" : null,
+      "ext" : "Geometry"
+      },
+    {
+      "type" : "Execute",
+      "value" : {}
+      },
+    {
+      "type" : "Vec3",
+      "value" : {
+        "x" : 0,
+        "y" : 0,
+        "z" : 0
+        },
+      "ext" : "Math"
+      }
+    ]
+  }

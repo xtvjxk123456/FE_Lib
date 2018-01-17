@@ -1,0 +1,88 @@
+{
+  "objectType" : "Func",
+  "title" : "RTValsGet",
+  "ports" : [
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true"
+        },
+      "name" : "exec",
+      "nodePortType" : "IO",
+      "defaultValues" : {
+        "Execute" : {}
+        },
+      "execPortType" : "IO",
+      "typeSpec" : "Execute"
+      },
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true"
+        },
+      "name" : "rtVals",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "RTVal[String]" : {}
+        },
+      "execPortType" : "In",
+      "typeSpec" : "RTVal[String]"
+      },
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true"
+        },
+      "name" : "key",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "String" : "file"
+        },
+      "execPortType" : "In",
+      "typeSpec" : "String"
+      },
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true"
+        },
+      "name" : "value",
+      "nodePortType" : "In",
+      "defaultValues" : {
+        "RTVal" : null
+        },
+      "execPortType" : "Out",
+      "typeSpec" : "RTVal"
+      }
+    ],
+  "extDeps" : {},
+  "origPresetGUID" : "5C04EE65557A127A898F2A23CFB1F2DA",
+  "code" : "
+dfgEntry {
+  
+  if (rtVals.has(key)){
+    //report(rtVals[key].type());
+    value = rtVals[key];
+    
+    
+    
+  }
+ 
+  
+}
+",
+  "args" : [
+    {
+      "type" : "RTVal[String]",
+      "value" : null
+      },
+    {
+      "type" : "String",
+      "value" : "file"
+      },
+    {
+      "type" : "RTVal",
+      "value" : null
+      }
+    ]
+  }

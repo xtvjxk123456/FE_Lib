@@ -1,0 +1,100 @@
+{
+  "objectType" : "Func",
+  "title" : "func",
+  "ports" : [
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true"
+        },
+      "name" : "exec",
+      "nodePortType" : "IO",
+      "defaultValues" : {
+        "Execute" : {}
+        },
+      "execPortType" : "IO",
+      "typeSpec" : "Execute"
+      },
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true"
+        },
+      "name" : "pixel",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "Vec2" : {
+          "x" : 1032,
+          "y" : 1032
+          }
+        },
+      "execPortType" : "In",
+      "typeSpec" : "Vec2"
+      },
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true",
+        "uiHardRange" : "(0, 1)"
+        },
+      "name" : "uv",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "Vec2" : {
+          "x" : 0.3999999165534973,
+          "y" : 0.2999999225139618
+          }
+        },
+      "execPortType" : "In",
+      "typeSpec" : "Vec2"
+      },
+    {
+      "objectType" : "ExecPort",
+      "metadata" : {
+        "uiPersistValue" : "true"
+        },
+      "name" : "pixelUV",
+      "nodePortType" : "In",
+      "defaultValues" : {
+        "Vec2" : {
+          "x" : 0,
+          "y" : 0
+          }
+        },
+      "execPortType" : "Out",
+      "typeSpec" : "Vec2"
+      }
+    ],
+  "extDeps" : {},
+  "code" : "dfgEntry {
+  pixelUV.x= uv.x*pixel.x;
+  pixelUV.y= uv.y*pixel.y;
+}
+",
+  "args" : [
+    {
+      "type" : "Vec2",
+      "value" : {
+        "x" : 1032,
+        "y" : 1032
+        },
+      "ext" : "Math"
+      },
+    {
+      "type" : "Vec2",
+      "value" : {
+        "x" : 0.3999999165534973,
+        "y" : 0.2999999225139618
+        },
+      "ext" : "Math"
+      },
+    {
+      "type" : "Vec2",
+      "value" : {
+        "x" : 0,
+        "y" : 0
+        },
+      "ext" : "Math"
+      }
+    ]
+  }
